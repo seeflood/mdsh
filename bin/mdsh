@@ -20,7 +20,7 @@
 # ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 set -euo pipefail  # Strict mode
-mdsh-compile-shell_background() { printf 'nohup %s & \n' "$(echo $1)"; }
+mdsh-compile-shell_background() { printf 'nohup %s & \n sleep 1s \n' "$(echo $1)"; }
 mdsh-parse() {
 	local cmd=$1 lno=0 block_start lang mdsh_block ln indent fence close_fence indent_remove
 	local mdsh_fence=$'^( {0,3})(~~~+|```+) *([^`]*)$'
